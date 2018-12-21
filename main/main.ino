@@ -48,9 +48,6 @@ void setup()
 
     // mode change button
     pinMode(modeButton, INPUT_PULLUP);
-
-    // start serial for debug
-    Serial.begin(115200);
 }
 
 // handler for mode knob down
