@@ -18,11 +18,11 @@ volatile byte oldEncPos = 0;
 volatile byte reading = 0;
 
 // knob pressing
-#define freezePin 8
+#define freezePin 4
 int solidVal;
 
 // mode button
-#define modeButton 12
+#define modeButton 6
 int val;
 
 // system config
