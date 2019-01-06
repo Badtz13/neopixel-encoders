@@ -27,7 +27,7 @@ int val;
 
 // system config
 volatile uint8_t BRIGHTNESS = 20;
-int MODE = 2;
+int MODE = 4;
 bool SOLID_ENABLED = false;
 
 #define ARRAY_SIZE(A) (sizeof(A) / sizeof((A)[0]))
@@ -84,7 +84,7 @@ void PinB()
 
 // setup mode list
 typedef void (*modeList[])();
-modeList gPatterns = {fill, glitter, confetti, sinelon};
+modeList gPatterns = {fill, glitter, confetti, sinelon, white};
 
 uint8_t gHue = 0; // rotating "base color" used by many of the patterns
 
@@ -162,4 +162,9 @@ void sinelon()
     fadeToBlackBy(leds, NUM_LEDS, 20);
     int pos = beatsin16(13, 0, NUM_LEDS);
     leds[pos] += CHSV(gHue, 255, 192);
+}
+
+void white()
+{
+    fill_solid(leds, NUM_LEDS, CRGB::White);
 }
